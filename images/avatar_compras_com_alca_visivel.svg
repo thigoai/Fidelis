@@ -1,0 +1,23 @@
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Corpo do Avatar -->
+  <circle cx="100" cy="60" r="40" fill="#d9e3f0"/> <!-- Cabeça em tom de cinza claro -->
+  <rect x="80" y="100" width="40" height="60" fill="#b0c4de" rx="5"/> <!-- Tronco em azul claro -->
+
+  <!-- Braço Direito -->
+  <rect x="120" y="110" width="15" height="40" fill="#d9e3f0" rx="5" transform="rotate(20 100 100)"/> 
+
+  <!-- Sacola de Compras -->
+  <rect x="135" y="140" width="35" height="40" fill="#87a1c2" rx="4"/> <!-- Sacola em azul mais escuro -->
+  <!-- Alça mais visível da sacola -->
+  <path d="M 137 142 Q 152 125 167 142" stroke="#ffffff" stroke-width="2" fill="none"/>
+
+  <!-- Braço Esquerdo -->
+  <rect x="65" y="110" width="15" height="40" fill="#d9e3f0" rx="5" transform="rotate(-20 100 100)"/>
+
+  <!-- Detalhes do Rosto -->
+  <circle cx="90" cy="55" r="5" fill="#2f4f4f"/> <!-- Olho esquerdo -->
+  <circle cx="110" cy="55" r="5" fill="#2f4f4f"/> <!-- Olho direito -->
+  <path d="M 90 70 Q 100 80 110 70" stroke="#2f4f4f" stroke-width="2" fill="none"/> <!-- Sorriso -->
+
+</svg>
