@@ -17,7 +17,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="hub.html" class="active"><i class="fas fa-home"></i> Home </a></li>
-                    <li><a href="pesquisa.html"><i class="fas fa-search"></i> Procurar</a></li>
+                    <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
                     <li><a href="passaport.html"><i class="fas fa-passport"></i> Passaporte</a></li>
                     <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
                     <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
@@ -27,6 +27,15 @@
                 <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-img">
             </div>
         </header>
+
+
+        <div class="search-container">
+            <div class="search-bar" id="search-bar" style="display: none;">
+                <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+            </div>
+        </div>
+
+
 
         <!-- Hero Section -->
         <section class="hero">
@@ -66,5 +75,6 @@
             <p>&copy; 2024 Fidelis. Todos os direitos reservados.</p>
         </footer>
     </div>
+    <script src="script/pesquisa.js"></script>
 </body>
 </html>
