@@ -13,3 +13,8 @@ searchLink.addEventListener('click', function(event) {
         searchBar.style.display = 'none'; 
     }
 });
+
+const profilePicture = document.getElementById('profilePicture');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+
