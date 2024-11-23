@@ -94,6 +94,151 @@ body {
     color: #0077b6;
 }
 
+
+.shop-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.shop-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0077b6;
+}
+
+.shop-name {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Chat Section */
+.chat-section {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar de Lojas */
+.chat-sidebar {
+    width: 30%;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+.chat-sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #0077b6;
+}
+
+.shop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shop-item {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.shop-item:hover {
+    background: #0077b6;
+    color: #fff;
+}
+
+.shop-item.active {
+    background: #0077b6;
+    color: #fff;
+}
+
+/* Janela de Chat */
+.chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.message.received {
+    align-self: flex-start;
+    background: #f1f1f1;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background: #0077b6;
+    color: #fff;
+}
+
+/* Formulário de Mensagens */
+.message-form {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    background: #f8f9fa;
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.send-button {
+    background: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-button:hover {
+    background: #005f8b;
+}
+
 /* Footer */
 .main-footer {
     text-align: center;
