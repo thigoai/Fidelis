@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Loja</title>
+    <link rel="stylesheet" href="css/loja.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="main-header">
+            <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="hub.html"><i class="fas fa-home"></i> Home </a></li>
+                    <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
+                    <li><a href="passaport.html"><i class="fas fa-passport"></i> Passaporte</a></li>
+                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
+                    <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                </ul>
+            </nav>
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <div class="dropdown-menu" id="dropdownMenu">
+                  <ul>
+                    <li><a href="#">Meu Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="#">Sair</a></li>
+                  </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="search-container">
+            <div class="search-bar" id="search-bar" style="display: none;">
+                <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+            </div>
+        </div>
+
+        <!-- Banner da loja -->
+        <section class="banner">
+            <img src="images/default-banner.jpg" alt="Banner da Loja" class="banner-image">
+        </section>
+
+        <div class="container">
+            <!-- Barra Lateral -->
+            <aside class="sidebar">
+                <div class="loja-header">
+                    <h1 id="nome-loja">Café do Centro</h1>
+                </div>
+                <nav class="loja-nav">
+                    <ul>
+                        <li><a href="#novidades" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
+                        <li><a href="#progresso" onclick="mostrarSubpagina('progresso')">Acompanhar Progresso</a></li>
+                        <li><a href="#ranking" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
+                    </ul>
+                </nav>
+            </aside>
+    
+            <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="loja-header">
+                <img src="images/cafe.jpg" alt="Ícone" class="feature-icon">
+                <h1 id="nome-loja">Loja Exemplo</h1>
+            </div>
+            <nav class="loja-nav">
+                <ul>
+                    <li><a href="#" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
+                    <li><a href="#" onclick="mostrarSubpagina('progresso')">Meu Progresso</a></li>
+                    <li><a href="#" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+
+        <!-- Conteúdo Dinâmico -->
+        <main class="content">
+            <!-- Subpágina Novidades -->
+            <section id="novidades" class="subpagina active">
+                <h2>Novidades</h2>
+                <div class="feed">
+                    <!-- Post 1 -->
+                    <div class="post">
+                        <img src="https://via.placeholder.com/800x300" alt="Imagem da novidade" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Novo combo!</h3>
+                            <p class="post-description">
+                                Confira.
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Post 2 -->
+                    <div class="post">
+                        <div class="post-content">
+                            <h3 class="post-title">Promoção: Pontos em dobro!</h3>
+                            <p class="post-description">
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Post 3 -->
+                    <div class="post">
+                        <div class="post-content">
+                            <h3 class="post-title">Evento VIP</h3>
+                            <p class="post-description">
+                                Participe de nosso evento exclusivo para clientes VIP neste sábado, com brindes e descontos.
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Subpágina Progresso -->
+            <section id="progresso" class="subpagina">
+                <h2>Meu Progresso</h2>
+                <p>Acompanhe seu progresso nos programas de fidelidade da loja.</p>
+                <div>
+                    <h3>Programa 1: Café & Ponto</h3>
+                    <p>Pontos acumulados: 85/100</p>
+                    <progress value="85" max="100"></progress>
+                </div>
+                <div>
+                    <h3>Programa 2: Moda Club</h3>
+                    <p>Pontos acumulados: 40/50</p>
+                    <progress value="40" max="50"></progress>
+                </div>
+            </section>
+
+            <!-- Subpágina Ranking -->
+            <section id="ranking" class="subpagina">
+                <h2>Ranking de Clientes</h2>
+                <p>Veja quem são os clientes mais engajados da loja.</p>
+                <ol>
+                    <li>Maria Silva - 500 pontos</li>
+                    <li>João Santos - 450 pontos</li>
+                    <li>Ana Souza - 400 pontos</li>
+                </ol>
+            </section>
+        </main>
+    </div>
+    
+        <script src="script/loja.js"></script>
+        <script src="script/pesquisa.js"></script>
+        <script src="script/perfil.js"></script>
+</body>
+</html>
