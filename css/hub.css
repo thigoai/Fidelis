@@ -68,8 +68,6 @@ body {
     color: #0077b6;
 }
 
-
-
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -216,6 +214,10 @@ body {
     background-color: #005f8b;
 }
 
+/* Remove o sublinhado dos links */
+a {
+    text-decoration: none;
+}
 
 /* Footer */
 .main-footer {
