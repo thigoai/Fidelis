@@ -307,7 +307,7 @@ a {
 
 .carousel {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     overflow-x: auto; 
     scroll-behavior: smooth; 
     padding: 10px 0;
@@ -315,6 +315,7 @@ a {
 
 .carousel .item {
     flex: 0 0 auto; 
+    cursor: pointer;
     width: 200px;
     height: 120px;
     background-color: #d3d3d3;
@@ -331,6 +332,10 @@ a {
     object-fit: cover;
     border-radius: 8px; 
     overflow: hidden; 
+}
+
+.item:hover {
+    transform: scale(1.1);
 }
 
 .carousel::-webkit-scrollbar {
@@ -374,3 +379,6 @@ button {
     cursor: pointer;
   }
 
+.hidden{
+    display: none;
+}
