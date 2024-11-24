@@ -1,20 +1,17 @@
-
+// Mostrar e ocultar barra de pesquisa
 const searchLink = document.getElementById('search-link');
-const searchBar = document.getElementById('search-bar'); 
+const searchBar = document.getElementById('search-bar');
 
-
-searchLink.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    
-    
-    if (searchBar.style.display === 'none' || searchBar.style.display === '') {
-        searchBar.style.display = 'block'; 
-    } else {
-        searchBar.style.display = 'none'; 
-    }
+searchLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
 });
 
-const profilePicture = document.getElementById('profilePicture');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-
+function scrollCarousel(carouselId, direction) {
+    const carousel = document.getElementById(carouselId);
+    const scrollAmount = carousel.offsetWidth / 2; // Rola metade da largura visível
+    carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth',
+    });
+}
