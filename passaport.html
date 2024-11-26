@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passaporte de Fidelidade</title>
     <link rel="stylesheet" href="css/passaport.css">
+    <link rel="stylesheet" href="css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
@@ -17,7 +18,7 @@
                 <ul class="nav-links">
                     <li><a href="hub.html"><i class="fas fa-home"></i> Home </a></li>
                     <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
-                    <li><a href="passaport.html" class="active"><i class="fas fa-passport"></i> Passaporte</a></li>
+                    <li><a href="passaport.html"class="active"><i class="fas fa-passport"></i> Passaporte</a></li>
                     <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
                     <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
                 </ul>
@@ -26,13 +27,17 @@
                 <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
                 <div class="dropdown-menu" id="dropdownMenu">
                   <ul>
-                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="#">Meu Perfil</a></li>
                     <li><a href="#">Configurações</a></li>
                     <li><a href="#">Sair</a></li>
                   </ul>
                 </div>
             </div>
         </header>
+
+        <div class="void">
+            
+        </div>
 
 
         <div class="search-container">
@@ -51,36 +56,6 @@
             <img src="images/qrcode.png" alt="QR Code" class="qr-code">
             <p>Escaneie o QR Code para registrar um carimbo!</p>
         </div>
-
-        <!-- Lista de Programas de Fidelidade -->
-        <section class="programs-section">
-            <h3>Programas de Fidelidade</h3>
-            <div class="program-list">
-                <!-- Loja 1 -->
-                <div class="program-card">
-                    <h4>Café Expresso</h4>
-                    <p><strong>Carimbos:</strong> 5/10</p>
-                    <p><strong>Recompensa:</strong> 1 Café Grátis</p>
-                    <button class="btn-primary">Ver Detalhes</button>
-                </div>
-
-                <!-- Loja 2 -->
-                <div class="program-card">
-                    <h4>Pizzaria Sabor</h4>
-                    <p><strong>Carimbos:</strong> 3/8</p>
-                    <p><strong>Recompensa:</strong> 1 Pizza Média</p>
-                    <button class="btn-primary">Ver Detalhes</button>
-                </div>
-
-                <!-- Loja 3 -->
-                <div class="program-card">
-                    <h4>Academia Fit</h4>
-                    <p><strong>Carimbos:</strong> 7/12</p>
-                    <p><strong>Recompensa:</strong> 1 Aula Grátis</p>
-                    <button class="btn-primary">Ver Detalhes</button>
-                </div>
-            </div>
-        </section>
 
         <!-- Rodapé -->
         <footer class="main-footer">

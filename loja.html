@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Loja</title>
     <link rel="stylesheet" href="css/loja.css">
+    <link rel="stylesheet" href="css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
@@ -27,7 +28,7 @@
                 <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
                 <div class="dropdown-menu" id="dropdownMenu">
                   <ul>
-                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="#">Meu Perfil</a></li>
                     <li><a href="#">Configurações</a></li>
                     <li><a href="#">Sair</a></li>
                   </ul>
@@ -35,17 +36,16 @@
             </div>
         </header>
 
+        <div class="void">
+            
+        </div>
+
 
         <div class="search-container">
             <div class="search-bar" id="search-bar" style="display: none;">
                 <input type="text" placeholder="Digite para pesquisar..." id="search-input">
             </div>
         </div>
-
-        <!-- Banner da loja -->
-        <section class="banner">
-            <img src="images/default-banner.jpg" alt="Banner da Loja" class="banner-image">
-        </section>
 
         <div class="container">
             <!-- Barra Lateral -->
@@ -148,16 +148,32 @@
                 </div>
             </section>
 
-            <!-- Subpágina Ranking -->
+           <!-- Subpágina Ranking -->
             <section id="ranking" class="subpagina">
                 <h2>Ranking de Clientes</h2>
                 <p>Veja quem são os clientes mais engajados da loja.</p>
                 <ol>
-                    <li>Maria Silva - 500 pontos</li>
-                    <li>João Santos - 450 pontos</li>
-                    <li>Ana Souza - 400 pontos</li>
+                    <li>
+                        <div class="ranking-item">
+                            <img src="images/maria.jpg" alt="Perfil de Maria Silva" class="profile-small">
+                            <span>Maria Silva - 500 pontos</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-item">
+                            <img src="images/joao.jpg" alt="Perfil de João Santos" class="profile-small">
+                            <span>João Santos - 450 pontos</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-item">
+                            <img src="images/ana.jpg" alt="Perfil de Ana Souza" class="profile-small">
+                            <span>Ana Souza - 400 pontos</span>
+                        </div>
+                    </li>
                 </ol>
             </section>
+
         </main>
     </div>
     
