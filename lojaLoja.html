@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Loja</title>
+    <link rel="stylesheet" href="css/loja.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/progresso.css">
+    <link rel="stylesheet" href="css/ranking.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="main-header">
+            <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="hub.html"><i class="fas fa-home"></i> Home </a></li>
+                    <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
+                    <li><a href="passaport.html"><i class="fas fa-passport"></i> Passaporte</a></li>
+                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
+                    <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                </ul>
+            </nav>
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <div class="dropdown-menu" id="dropdownMenu">
+                  <ul>
+                    <li><a href="#">Meu Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="#">Sair</a></li>
+                  </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="void">
+            
+        </div>
+
+
+        <div class="search-container">
+            <div class="search-bar" id="search-bar" style="display: none;">
+                <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Barra Lateral -->
+            <aside class="sidebar">
+                <div class="loja-header">
+                    <h1 id="nome-loja">Café do Centro</h1>
+                </div>
+                <nav class="loja-nav">
+                    <ul>
+                        <li><a href="#novidades" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
+                        <li><a href="#progresso" onclick="mostrarSubpagina('progresso')">Acompanhar Progresso</a></li>
+                        <li><a href="#ranking" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        
+
+            <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="loja-header">
+                <img src="images/cafe.jpg" alt="Ícone" class="feature-icon">
+                <h1 id="nome-loja">Loja Exemplo</h1>
+            </div>
+            <nav class="loja-nav">
+                <ul>
+                    <li><a href="#" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
+                    <li><a href="#" onclick="mostrarSubpagina('progresso')">Progresso Clientes</a></li>
+                    <li><a href="#" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+
+        <!-- Conteúdo Dinâmico -->
+        <main class="content">
+            <!-- Subpágina Novidades -->
+            <section id="novidades" class="subpagina active">
+                <h2>Novidades</h2>
+                <!-- Formulário de Postagem -->
+                <div class="post-form">
+                    <h3>Criar Nova Postagem</h3>
+                    <form id="create-post-form">
+                        <input type="text" id="post-title" placeholder="Título da postagem" required>
+                        <textarea id="post-description" placeholder="Descrição da postagem" rows="4" required></textarea>
+                        <input type="file" id="post-image" accept="image/*">
+                        <div class="form-actions">
+                            <button type="button" class="cancel-button" onclick="cancelPost()">Cancelar</button>
+                            <button type="submit" class="submit-button">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="feed">
+                        
+                    
+                    <!-- Post 1 -->
+                    <div class="post">
+                        <img src="https://via.placeholder.com/800x300" alt="Imagem da novidade" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Novo combo!</h3>
+                            <p class="post-description">
+                                Confira.
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Post 2 -->
+                    <div class="post">
+                        <div class="post-content">
+                            <h3 class="post-title">Promoção: Pontos em dobro!</h3>
+                            <p class="post-description">
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Post 3 -->
+                    <div class="post">
+                        <div class="post-content">
+                            <h3 class="post-title">Evento VIP</h3>
+                            <p class="post-description">
+                                Participe de nosso evento exclusivo para clientes VIP neste sábado, com brindes e descontos.
+                            </p>
+                            <div class="post-actions">
+                                <button class="like-button">Curtir</button>
+                                <button class="share-button">Compartilhar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Subpágina Progresso -->
+            <section id="progresso" class="subpagina">
+                <h2>Progresso dos Clientes</h2>
+                <p>Acompanhe o progresso dos seus clientes em diferentes programas de fidelidade.</p>
+
+                <!-- Programa 1 -->
+                <div class="programa-progresso">
+                    <h3>Café free</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Pontos Acumulados</th>
+                                <th>Meta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maria Silva</td>
+                                <td>85</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>João Santos</td>
+                                <td>50</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Ana Souza</td>
+                                <td>95</td>
+                                <td>100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Programa 2 -->
+                <div class="programa-progresso">
+                    <h3>Desconto 50%</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Pontos Acumulados</th>
+                                <th>Meta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maria Silva</td>
+                                <td>40</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>João Santos</td>
+                                <td>30</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Ana Souza</td>
+                                <td>45</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+           <!-- Subpágina Ranking -->
+            <section id="ranking" class="subpagina">
+                <h2>Ranking de Clientes</h2>
+                <p>Veja quem são os clientes mais engajados da loja.</p>
+                <div class="ranking-container">
+                    <!-- Primeiro lugar -->
+                    <div class="ranking-card gold">
+                        <div class="ranking-position">🥇</div>
+                        <img src="images/maria.jpg" alt="Perfil de Maria Silva" class="profile-small">
+                        <div class="ranking-details">
+                            <h3>Maria Silva</h3>
+                            <p>500 pontos</p>
+                        </div>
+                    </div>
+
+                    <!-- Segundo lugar -->
+                    <div class="ranking-card silver">
+                        <div class="ranking-position">🥈</div>
+                        <img src="images/joao.jpg" alt="Perfil de João Santos" class="profile-small">
+                        <div class="ranking-details">
+                            <h3>João Santos</h3>
+                            <p>450 pontos</p>
+                        </div>
+                    </div>
+
+                    <!-- Terceiro lugar -->
+                    <div class="ranking-card bronze">
+                        <div class="ranking-position">🥉</div>
+                        <img src="images/ana.jpg" alt="Perfil de Ana Souza" class="profile-small">
+                        <div class="ranking-details">
+                            <h3>Ana Souza</h3>
+                            <p>400 pontos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+    
+        <script src="script/loja.js"></script>
+        <script src="script/pesquisa.js"></script>
+        <script src="script/perfil.js"></script>
+        <script src="script/post.js"></script>
+</body>
+</html>
