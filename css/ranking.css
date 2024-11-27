@@ -1,0 +1,61 @@
+.ranking-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ranking-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ranking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ranking-position {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.profile-small {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px auto;
+    border: 3px solid #f4f4f4;
+    object-fit: cover;
+}
+
+.ranking-details h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.ranking-details p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Medalhas personalizadas */
+.gold {
+    border: 2px solid gold;
+}
+
+.silver {
+    border: 2px solid silver;
+}
+
+.bronze {
+    border: 2px solid #cd7f32;
+}
