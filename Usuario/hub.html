@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fidelis - Hub</title>
-    <link rel="stylesheet" href="css/hub.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="../css/hub.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
-        <!-- Cabeçalho -->
-        <!-- Cabeçalho -->
         <header class="main-header">
             <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
             <nav>
@@ -26,7 +24,7 @@
                 </ul>
             </nav>
             <div class="profile-container">
-                <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <img src="../images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
                 <div class="dropdown-menu" id="dropdownMenu">
                   <ul>
                     <li><a href="#">Meu Perfil</a></li>
@@ -44,35 +42,29 @@
 
         <div class="search-container">
             <div class="search-bar" id="search-bar" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35" />
+                </svg>
                 <input type="text" placeholder="Digite para pesquisar..." id="search-input">
             </div>
         </div>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2>Bem-vindo(a) ao <span>Fidelis</span></h2>
-            <p></p>
-            <div class="cta-buttons">
-                <a href="passaporte.html" class="btn">Adicionar loja</a>
-            </div>
-        </section>
 
         <section class="sugestoes">
             <h2>Sugestões:</h2>
             <div class="carousel-container">
                 <button id="prev1" class="scroll-btn left" onclick="scrollCarousel('carousel1', -1, 'prev1', 'next1')">&lt;</button>
                 <div id="carousel1" class="carousel">
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
                 </div>
                 <button id="next1" class="scroll-btn right" onclick="scrollCarousel('carousel1', 1, 'prev1', 'next1')">&gt;</button>
             </div>
@@ -84,17 +76,17 @@
             <div class="carousel-container">
                 <button id="prev2" class="scroll-btn left" onclick="scrollCarousel('carousel2', -1, 'prev2', 'next2')">&lt;</button>
                 <div id="carousel2" class="carousel">
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
                 </div>
                 <button id="next2" class="scroll-btn right" onclick="scrollCarousel('carousel2', 1, 'prev2', 'next2')">&gt;</button>
             </div>
@@ -106,17 +98,17 @@
             <div class="carousel-container">
                 <button id="prev3" class="scroll-btn left" onclick="scrollCarousel('carousel3', -1, 'prev3', 'next3')">&lt;</button>
                 <div id="carousel3" class="carousel">
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
-                    <div class="item" data-link="loja.html">Loja</div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-link="loja.html"></div>
                 </div>
                 <button id="next3" class="scroll-btn right" onclick="scrollCarousel('carousel3', 1, 'prev3', 'next3')">&gt;</button>
             </div>
@@ -128,7 +120,7 @@
             <p>&copy; 2024 Fidelis. Todos os direitos reservados.</p>
         </footer>
     </div>
-    <script src="script/pesquisa.js"></script>
-    <script src="script/perfil.js"></script>
+    <script src="../script/pesquisa.js"></script>
+    <script src="../script/perfil.js"></script>
 </body>
 </html>

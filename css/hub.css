@@ -24,19 +24,6 @@ body {
     border-radius: 8px;
 }
 
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.hero h2 span {
-    color: #ffffff;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
 
 .cta-buttons {
     display: flex;
@@ -140,6 +127,10 @@ a {
     text-decoration: none;
 }
 
+h2{
+    margin-left: 15px;
+}
+
 /* Footer */
 .main-footer {
     text-align: center;
@@ -152,21 +143,39 @@ a {
 
 
 .search-container {
-    text-align: center;
-    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-bar {
-    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 700px; 
 }
 
-.search-bar input {
-    padding: 10px;
+#search-input {
     width: 100%;
-    max-width: 400px;
+    padding: 10px 40px; 
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 30px; 
+    box-sizing: border-box;
+    outline: none; 
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #555; 
+    pointer-events: none; 
 }
 
   .carousel-container {
