@@ -22,6 +22,8 @@ function scrollCarousel(carouselId, direction) {
 
 //Para fazer os itens redirecionar os itens para o link da loja
 const items = document.querySelectorAll(".item");
+const favoriteItems = document.querySelectorAll(".favorite-item");
+const promoItems = document.querySelectorAll(".promo-item");
 
 items.forEach(item => {
   item.addEventListener("click", () => {
@@ -31,6 +33,25 @@ items.forEach(item => {
     }
   });
 });
+
+favoriteItems.forEach(favoriteItem => {
+  favoriteItem.addEventListener("click", () => {
+    const link = favoriteItem.getAttribute("data-link");
+    if (link) {
+      window.location.href = link;
+    }
+  });
+});
+
+promoItems.forEach(promoItem => {
+  promoItem.addEventListener("click", () => {
+    const link = promoItem.getAttribute("data-link");
+    if (link) {
+      window.location.href = link;
+    }
+  });
+});
+
 
 
 
