@@ -6,6 +6,7 @@
     <title>Fidelis - Hub</title>
     <link rel="stylesheet" href="../css/hub.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
@@ -54,22 +55,28 @@
             <div class="carousel-container">
                 <button id="prev1" class="scroll-btn left" onclick="scrollCarousel('carousel1', -1, 'prev1', 'next1')">&lt;</button>
                 <div id="carousel1" class="carousel">
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
-                    <div class="item" data-link="loja.html"></div>
+                    <div class="item" data-id="1" data-link="loja.html">Item 1</div>
+                    <div class="item" data-id="2" data-link="loja.html">Item 2</div>
+                    <div class="item" data-id="3" data-link="loja.html">Item 3</div>
+                    <div class="item" data-id="4" data-link="loja.html">Item 4</div>
+                    <div class="item" data-id="5" data-link="loja.html">Item 5</div>
+                    <div class="item" data-id="6" data-link="loja.html">Item 6</div>
+                    <div class="item" data-id="7" data-link="loja.html">Item 7</div>
+                    <div class="item" data-id="8" data-link="loja.html">Item 8</div>
+                    <div class="item" data-id="9" data-link="loja.html">Item 9</div>
                 </div>
                 <button id="next1" class="scroll-btn right" onclick="scrollCarousel('carousel1', 1, 'prev1', 'next1')">&gt;</button>
-            </div>
-            
+            </div>          
         </section>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+              <span id="close-modal" class="close">&times;</span>
+              <div id="modal-body"></div>
+            </div>
+          </div>
+          
+          
       
         <section class="promocao">
             <h2>Promoções do dia:</h2>
