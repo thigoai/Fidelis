@@ -20,24 +20,26 @@
             <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="hub.html"><i class="fas fa-home"></i> Home </a></li>
+                    <li><a href="lojaLoja.html"class="active"><i class="fas fa-home"></i> Home </a></li>
                     <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
-                    <li><a href="passaport.html"><i class="fas fa-passport"></i> Passaporte</a></li>
-                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
-                    <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                    <li><a href="carimbar.html"><i class="fas fa-stamp"></i> Carimbar</a></li>
+                    <li><a href="recompensasLoja.html"><i class="fas fa-gift"></i> Recompensas</a></li>
+                    <li><a href="chatLoja.html"><i class="fas fa-comments"></i> Chat</a></li>
+                    <li><a href="analiseLoja.html"><i class="fas fa-chart-line"></i> Análise</a></li>
                 </ul>
             </nav>
             <div class="profile-container">
-                <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <img src="../images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
                 <div class="dropdown-menu" id="dropdownMenu">
-                  <ul>
-                    <li><a href="#">Meu Perfil</a></li>
-                    <li><a href="#">Configurações</a></li>
-                    <li><a href="#">Sair</a></li>
-                  </ul>
+                    <ul>
+                        <li><a href="#">Meu Perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
+
 
         <div class="void">
             
@@ -49,39 +51,38 @@
                 <input type="text" placeholder="Digite para pesquisar..." id="search-input">
             </div>
         </div>
+        
 
+      <!-- Conteúdo Principal -->
         <div class="container">
             <!-- Barra Lateral -->
             <aside class="sidebar">
                 <div class="loja-header">
-                    <h1 id="nome-loja">Café do Centro</h1>
+                    <img src="../images/cafe.jpg" alt="Ícone" class="feature-icon">
+                    <h1 id="nome-loja">Loja Exemplo</h1>
                 </div>
                 <nav class="loja-nav">
                     <ul>
-                        <li><a href="#novidades" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
-                        <li><a href="#progresso" onclick="mostrarSubpagina('progresso')">Acompanhar Progresso</a></li>
-                        <li><a href="#ranking" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('novidades')">
+                                <i class="fas fa-bullhorn"></i> Novidades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('progresso')">
+                                <i class="fas fa-chart-line"></i> Progresso Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('ranking')">
+                                <i class="fas fa-trophy"></i> Ranking de Clientes
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </aside>
-        
+        </div>
 
-            <!-- Conteúdo Principal -->
-    <div class="container">
-        <!-- Barra Lateral -->
-        <aside class="sidebar">
-            <div class="loja-header">
-                <img src="images/cafe.jpg" alt="Ícone" class="feature-icon">
-                <h1 id="nome-loja">Loja Exemplo</h1>
-            </div>
-            <nav class="loja-nav">
-                <ul>
-                    <li><a href="#" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
-                    <li><a href="#" onclick="mostrarSubpagina('progresso')">Progresso Clientes</a></li>
-                    <li><a href="#" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
-                </ul>
-            </nav>
-        </aside>
 
 
         <!-- Conteúdo Dinâmico -->
@@ -222,37 +223,51 @@
                 <h2>Ranking de Clientes</h2>
                 <p>Veja quem são os clientes mais engajados da loja.</p>
                 <div class="ranking-container">
-                    <!-- Primeiro lugar -->
-                    <div class="ranking-card gold">
-                        <div class="ranking-position">🥇</div>
-                        <img src="images/maria.jpg" alt="Perfil de Maria Silva" class="profile-small">
-                        <div class="ranking-details">
-                            <h3>Maria Silva</h3>
-                            <p>500 pontos</p>
-                        </div>
-                    </div>
-
-                    <!-- Segundo lugar -->
-                    <div class="ranking-card silver">
-                        <div class="ranking-position">🥈</div>
-                        <img src="images/joao.jpg" alt="Perfil de João Santos" class="profile-small">
-                        <div class="ranking-details">
-                            <h3>João Santos</h3>
-                            <p>450 pontos</p>
-                        </div>
-                    </div>
-
-                    <!-- Terceiro lugar -->
-                    <div class="ranking-card bronze">
-                        <div class="ranking-position">🥉</div>
-                        <img src="images/ana.jpg" alt="Perfil de Ana Souza" class="profile-small">
-                        <div class="ranking-details">
-                            <h3>Ana Souza</h3>
-                            <p>400 pontos</p>
-                        </div>
-                    </div>
+                    <section class="podium">
+                        <ul>
+                            <li class="second">
+                                <span class="position">2</span>
+                                <img src="images/joao.jpg" alt="João Santos">
+                                <p>João Santos</p>
+                                <span class="points">450 pontos</span>
+                            </li>
+                            <li class="first">
+                                <span class="position">1</span>
+                                <img src="images/maria.jpg" alt="Maria Silva">
+                                <img class="crown" src="images/crown.png" alt="Coroa">
+                                <p>Maria Silva</p>
+                                <span class="points">500 pontos</span>
+                            </li>
+                            <li class="third">
+                                <span class="position">3</span>
+                                <img src="images/ana.jpg" alt="Ana Souza">
+                                <p>Ana Souza</p>
+                                <span class="points">400 pontos</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="others">
+                        <ul>
+                            <li>
+                                <span class="position">4</span>
+                                <p>Carlos Silva</p>
+                                <span class="points">350 pontos</span>
+                            </li>
+                            <li>
+                                <span class="position">5</span>
+                                <p>Fernanda Costa</p>
+                                <span class="points">300 pontos</span>
+                            </li>
+                            <li>
+                                <span class="position">6</span>
+                                <p>Ricardo Oliveira</p>
+                                <span class="points">250 pontos</span>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
             </section>
+
 
 
         </main>
