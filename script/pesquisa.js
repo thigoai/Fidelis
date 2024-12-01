@@ -142,3 +142,4 @@ const exampleContent = {
   storeName: "CAFÉ IMD",
   image: "../images/modal.png"
 };
+

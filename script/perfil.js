@@ -11,3 +11,5 @@ profilePicture.addEventListener('click', () => {
       dropdownMenu.style.display = 'none';
     }
   });
+
+
