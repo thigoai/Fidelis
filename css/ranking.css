@@ -1,61 +1,87 @@
 .ranking-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.ranking-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 250px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.podium ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 50px 0;
+    position: relative;
+}
+
+.podium li {
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 10px;
+    flex: 1;
+    position: relative;
 }
 
-.ranking-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.ranking-position {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.profile-small {
-    width: 80px;
-    height: 80px;
+.podium li img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 10px auto;
-    border: 3px solid #f4f4f4;
-    object-fit: cover;
+    display: block;
 }
 
-.ranking-details h3 {
-    font-size: 1.2em;
-    margin: 10px 0 5px;
-    color: #333;
+.podium li .crown {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
 }
 
-.ranking-details p {
-    font-size: 1em;
-    color: #666;
+.podium li p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    font-weight: bold;
 }
 
-/* Medalhas personalizadas */
-.gold {
-    border: 2px solid gold;
+.podium li .points {
+    color: #555;
 }
 
-.silver {
-    border: 2px solid silver;
+.first {
+    order: -1;
+    transform: scale(1.2);
 }
 
-.bronze {
-    border: 2px solid #cd7f32;
+.others ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+.others li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.others li .position {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.others li p {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.others li .points {
+    font-weight: bold;
+    color: #0077b6;
+}
+
