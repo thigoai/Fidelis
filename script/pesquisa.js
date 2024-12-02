@@ -7,6 +7,15 @@ searchLink.addEventListener('click', function (event) {
     searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
 });
 
+document.getElementById("search-bar").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+      const termoPesquisa = event.target.value.trim();
+      if (termoPesquisa) {
+          window.location.href = `resultado.html?query=${encodeURIComponent(termoPesquisa)}`;
+      }
+  }
+});
+
 // Coloca os itens pro lado
 function scrollCarousel(carouselId, direction) {
     const carousel = document.getElementById(carouselId);

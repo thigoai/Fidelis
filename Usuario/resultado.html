@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidelis - Hub</title>
+    <link rel="stylesheet" href="../css/resultado.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="main-header">
+            <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="hub.html"><i class="fas fa-home"></i> Home </a></li>
+                    <li><a href="pesquisa.html" class="active" id="search-link"><i class="fas fa-search"></i> Procurar</a></li>
+                    <li><a href="passaport.html"><i class="fas fa-passport"></i> Passaporte</a></li>
+                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> Recompensas</a></li>
+                    <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                </ul>
+            </nav>
+            <div class="profile-container">
+                <img src="../images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <div class="dropdown-menu" id="dropdownMenu">
+                  <ul>
+                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="#">Sair</a></li>
+                  </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <div class="search-bar" id="search-bar" style="display: none;">
+                <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+            </div>
+        </div>
+
+        <main class="resultado-container">
+            <h2>Buscando por: <span class="highlight">Café IMD</span></h2>
+
+            <nav class="tabs">
+                <a href="#" class="tab active">Loja</a>
+                <a href="#" class="tab">Item</a>
+            </nav>
+
+            <div class="filtros">
+                <div class="filtros-controles">
+                    <label for="ordenar">Ordenar por:</label>
+                    <select id="ordenar" aria-placeholder="Ordenar por:">
+                        <option value="relevancia">Relevância</option>
+                        <option value="avaliacao">Avaliação</option>
+                    </select>
+                    
+                    <label for="filtros">Filtros:</label>
+                    <select id="filtros">
+                        <option value="nenhum">Nenhum</option>
+                        <option value="promo">Promoções</option>
+                    </select>
+                </div>
+                <button id="limparFiltros">Limpar Filtros</button>
+            </div>
+
+            <section class="resultados">
+                <div class="grid">
+                    <!-- Exemplo de cartão -->
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../images/cafe.jpg" alt="Café IMD">
+                        <div class="card-content">
+                            <h3>Café IMD</h3>
+                            <p><span><img src="../images/estrela.svg" style="width: 15px; height: auto;vertical-align: middle;"> 4.85</span></p>
+                            <p>"Seu impulso diário de sabor e inspiração!"</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <nav class="paginacao">
+                <button>&lt; Previous</button>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <button>Next &gt;</button>
+            </nav>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 Fidelis. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="../script/pesquisa.js"></script>
+    <script src="../script/perfil.js"></script>
+    <script src="../script/resultado.js"></script>
+</body>
+</html>
