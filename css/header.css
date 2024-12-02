@@ -129,18 +129,28 @@
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 20px;
+    .nav-links li a {
+        justify-content: center;
+        gap: 0; 
     }
 
-    .nav-links ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    .nav-links li a span {
+        display: none; 
+    }
+
+    .nav-links li a i {
+        font-size: 1.5rem; 
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .logo {
+        margin-left: 10px;
     }
 }
 
 .void {
-    padding-top: 60px;  /* Ajuste conforme a altura da sua barra superior */
+    padding-top: 60px;  
 }
