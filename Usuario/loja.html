@@ -6,6 +6,7 @@
     <title>Detalhes da Loja</title>
     <link rel="stylesheet" href="../css/loja.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/ranking.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
@@ -37,6 +38,7 @@
         </header>
 
         <div class="void">
+            
         </div>
 
 
@@ -47,21 +49,66 @@
         </div>
 
             <!-- Conteúdo Principal -->
+        <div class="container">
+            <!-- Barra Lateral -->
+            <aside class="sidebar">
+                <div class="loja-header">
+                    <img src="../images/cafe.jpg" alt="Ícone" class="feature-icon">
+                    <h1 id="nome-loja">Loja Exemplo</h1>
+                </div>
+                <nav class="loja-nav">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('novidades')">
+                                <i class="fas fa-bullhorn"></i> Novidades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('progresso')">
+                                <i class="fas fa-chart-line"></i> Progresso Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('ranking')">
+                                <i class="fas fa-trophy"></i> Ranking de Clientes
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+        
+
+            <!-- Conteúdo Principal -->
     <div class="container">
-        <!-- Barra Lateral -->
-        <aside class="sidebar">
-            <div class="loja-header">
-                <img src="../images/cafe.jpg" alt="Ícone" class="feature-icon">
-                <h1 id="nome-loja">Loja Exemplo</h1>
-            </div>
-            <nav class="loja-nav">
-                <ul>
-                    <li><a href="#" onclick="mostrarSubpagina('novidades')">Novidades</a></li>
-                    <li><a href="#" onclick="mostrarSubpagina('progresso')">Meu Progresso</a></li>
-                    <li><a href="#" onclick="mostrarSubpagina('ranking')">Ranking de Clientes</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <div class="container">
+            <!-- Barra Lateral -->
+            <aside class="sidebar">
+                <div class="loja-header">
+                    <img src="../images/cafe.jpg" alt="Ícone" class="feature-icon">
+                    <h1 id="nome-loja">Loja Exemplo</h1>
+                </div>
+                <nav class="loja-nav">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('novidades')">
+                                <i class="fas fa-bullhorn"></i> Novidades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('progresso')">
+                                <i class="fas fa-chart-line"></i> Progresso Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="mostrarSubpagina('ranking')">
+                                <i class="fas fa-trophy"></i> Ranking de Clientes
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
 
 
         <!-- Conteúdo Dinâmico -->
@@ -132,30 +179,54 @@
             </section>
 
            <!-- Subpágina Ranking -->
-            <section id="ranking" class="subpagina">
-                <h2>Ranking de Clientes</h2>
-                <p>Veja quem são os clientes mais engajados da loja.</p>
-                <ol>
-                    <li>
-                        <div class="ranking-item">
-                            <img src="../images/maria.jpg" alt="Perfil de Maria Silva" class="profile-small">
-                            <span>Maria Silva - 500 pontos</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ranking-item">
-                            <img src="../images/joao.jpg" alt="Perfil de João Santos" class="profile-small">
-                            <span>João Santos - 450 pontos</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ranking-item">
-                            <img src="../images/ana.jpg" alt="Perfil de Ana Souza" class="profile-small">
-                            <span>Ana Souza - 400 pontos</span>
-                        </div>
-                    </li>
-                </ol>
-            </section>
+           <section id="ranking" class="subpagina">
+            <h2>Ranking de Clientes</h2>
+            <p>Veja quem são os clientes mais engajados da loja.</p>
+            <div class="ranking-container">
+                <section class="podium">
+                    <ul>
+                        <li class="second">
+                            <span class="position">2</span>
+                            <img src="images/joao.jpg" alt="João Santos">
+                            <p>João Santos</p>
+                            <span class="points">450 pontos</span>
+                        </li>
+                        <li class="first">
+                            <span class="position">1</span>
+                            <img src="images/maria.jpg" alt="Maria Silva">
+                            <img class="crown" src="images/crown.png" alt="Coroa">
+                            <p>Maria Silva</p>
+                            <span class="points">500 pontos</span>
+                        </li>
+                        <li class="third">
+                            <span class="position">3</span>
+                            <img src="images/ana.jpg" alt="Ana Souza">
+                            <p>Ana Souza</p>
+                            <span class="points">400 pontos</span>
+                        </li>
+                    </ul>
+                </section>
+                <section class="others">
+                    <ul>
+                        <li>
+                            <span class="position">4</span>
+                            <p>Carlos Silva</p>
+                            <span class="points">350 pontos</span>
+                        </li>
+                        <li>
+                            <span class="position">5</span>
+                            <p>Fernanda Costa</p>
+                            <span class="points">300 pontos</span>
+                        </li>
+                        <li>
+                            <span class="position">6</span>
+                            <p>Ricardo Oliveira</p>
+                            <span class="points">250 pontos</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
 
         </main>
     </div>
