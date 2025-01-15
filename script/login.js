@@ -12,6 +12,23 @@ btnSignup.addEventListener("click", function () {
     body.className = "sign-up-js";
 })
 
-document.querySelector('.btn.btn-second').addEventListener('click', function () {
-    window.location.href = 'hub.html';
-});
+
+const form = {
+    signEmail: () => document.getElementById('signEmail'),
+    signPassword: () => document.getElementById('signPassword'),
+    loginEmail: () => document.getElementById('loginEmail'),
+    loginPassword: () => document.getElementById('loginPassword')
+};
+
+function login() {
+
+    signInWithEmailAndPassword(auth, form.loginEmail().value, form.loginPassword().value)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log("Usuário autenticado:", user);
+            window.location.href = "hub.html";
+        })
+        .catch((error) => {
+            console.error("Erro de autenticação:", error.code, error.message);
+        });
+}
