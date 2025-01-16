@@ -1,6 +1,5 @@
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDTCUOChzYTvKAICUSM7ngYXBH7mqZZS0g",
@@ -12,20 +11,6 @@ const firebaseConfig = {
     measurementId: "G-GTYJR7DW78"
 };
 
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Exemplo de autenticação
-/*signInWithEmailAndPassword(auth, "eaedoido455@gmail.com", "123456")
-    .then((userCredential) => {
-        // Usuário autenticado
-        var user = userCredential.user;
-        console.log("Usuário autenticado:", user);
-        window.location.href = "hub.html";
-    })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.error("Erro de autenticação:", errorCode, errorMessage);
-    });*/
+// Inicializa o Firebase App e Auth
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);

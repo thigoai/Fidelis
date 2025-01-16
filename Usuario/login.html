@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Fidelis</title>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
@@ -13,52 +13,10 @@
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
-                <h2 class="title title-primary">Bem-vindo de volta!</h2>
-                <p class="description description-primary">Para se manter fiél</p>
-                <p class="description description-primary">por favor prossiga com o seu login</p>
-                <button id="signin" class="btn btn-primary">Login</button>
-            </div>    
-            <div class="second-column">
-                <h2 class="title title-second">Crie a sua conta FIDELIS</h2>
-                <div class="social-media">
-                    <ul class="list-social-media">
-                        <a class="link-social-media">
-                            <li class="item-social-media">
-                                <i class="fab fa-facebook-f"></i>        
-                            </li>
-                        </a>
-                        <a class="link-social-media">
-                            <li class="item-social-media">
-                                <i class="fab fa-google-plus-g"></i>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-                <p class="description description-second">ou use o seu email para registro:</p>
-                <form class="form">
-                    
-                    
-                    <label class="label-input" for="signEmail">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" id="signEmail" name="signEmail" placeholder="Email" required>
-                    </label>
-                    
-                    <label class="label-input" for="signPassword">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" id="signPassword" name="signPassword" placeholder="Senha" required>
-                    </label>
-                    
-                    
-                    <button class="btn btn-second">Registrar</button>        
-                </form>
-            </div>
-        </div>
-        <div class="content second-content">
-            <div class="first-column">
                 <h2 class="title title-primary">Ei, novo por aqui?!</h2>
                 <p class="description description-primary">Entre usando os seus dados</p>
                 <p class="description description-primary">e começe a sua jornada conosco</p>
-                <button id="signup" class="btn btn-primary">Cadastro</button>
+                <button id="signup" class="btn btn-primary" onclick="window.location.href='cadastro.html';">Cadastro</button>
             </div>
             <div class="second-column">
                 <h2 class="title title-second">Entre na FIDELIS com:</h2>
@@ -90,12 +48,18 @@
                     </label>
                 
                     <a class="password" href="#">Esqueceu a senha?</a>
-                    <button class="btn btn-second" onclick="login()">Entrar</button>
+                    <button class="btn btn-second">Entrar</button>
                 </form>
             </div>
         </div>
     </div>
+
+   
+
     <script type="module" src="../script/firebase.js"></script>
-    <script src="../script/login.js"></script>
+    <script type="module" src="../script/login.js"></script>
 </body>
+
+
+
 </html>
