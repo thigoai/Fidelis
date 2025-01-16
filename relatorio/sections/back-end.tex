@@ -76,6 +76,7 @@ usando a URI fornecida na variável de ambiente $MONGODB_URI$ do arquivo .env.
 \vspace{1cm}
 
 Define as rotas da aplicação:
+
 - /api/auth: Redireciona as requisições relacionadas à autenticação para o authRoutes.
 
 - /api/lojas: Redireciona requisições relacionadas às lojas.
@@ -218,6 +219,7 @@ Como funciona:
 
 Objetivo: Buscar uma loja específica pelo ID.
 Como funciona:
+
 - Usa Loja.findById(req.params.id) para recuperar a loja com o ID fornecido.
 
 - Se a loja não for encontrada, retorna um código 404 (Não encontrado).
@@ -255,6 +257,7 @@ Como funciona:
 
 Objetivo: Atualizar o progresso de um programa específico em uma loja.
 Como funciona:
+
 - Recebe o ID da loja, o ID do programa e o novo progresso no corpo da requisição (req.body).
 
 
