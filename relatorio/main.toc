@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Back-end}{3}{}%
+\contentsline {subsection}{\numberline {1.1}server.js}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Modelo da coleção Loja}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Controller da coleção Loja}{5}{}%
