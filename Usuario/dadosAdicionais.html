@@ -16,7 +16,7 @@
             <div class="photo-container">
                 <img src="../images/foto de usuario.webp" alt="Foto de Perfil" id="profileImage">
                 <label for="uploadPhoto">Escolher Foto</label>
-                <input type="file" id="photo" accept="image/*">
+                <input type="file" id="photo" accept="image/*" onchange="loadPhoto(event)">
             </div>
             <!-- Formulário -->
             <div class="form-container">

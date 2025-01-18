@@ -28,7 +28,6 @@ async function saveAdditionalData(event) {
         });
 
         alert('Dados salvos com sucesso!');
-        // Redirecionar para a página inicial ou outra página
         window.location.href = "/Usuario/hub.html";
     } catch (error) {
         console.error('Erro ao salvar os dados:', error.message);
