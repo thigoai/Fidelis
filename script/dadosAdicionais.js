@@ -8,8 +8,18 @@ const uid = urlParams.get('uid');
 const form = {
     profileName: () => document.getElementById('profileName'),
     cpf: () => document.getElementById('cpf'),
-    phone: () => document.getElementById('phone')
+    phone: () => document.getElementById('phone'),
+    photo: () => document.getElementById('photo'),
 };
+
+function convertImageToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result); // Retorna a string Base64
+        reader.onerror = reject; // Captura erros durante a leitura
+        reader.readAsDataURL(file); // Converte a imagem para Base64
+    });
+}
 
 async function saveAdditionalData(event) {
     event.preventDefault();
@@ -17,14 +27,21 @@ async function saveAdditionalData(event) {
     const profileName = form.profileName().value;
     const cpf = form.cpf().value;
     const phone = form.phone().value;
+    const photoFile = form.photo().files[0]; // Obtém o arquivo de imagem
+    let photoBase64 = "";
 
     try {
+        // Converte a imagem para Base64, se houver
+        if (photoFile) {
+            photoBase64 = await convertImageToBase64(photoFile);
+        }
+
         // Salva os dados adicionais no Firestore
         await setDoc(doc(db, "users", uid), {
             profileName: profileName,
             cpf: cpf,
             phone: phone,
-            photoUrl: ""
+            photoUrl: photoBase64, // Armazena a imagem como Base64
         });
 
         alert('Dados salvos com sucesso!');

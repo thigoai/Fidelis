@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="../css/dadosAdicionais.css">
 </head>
 <body>
-    
     <div class="container">
-        
         <div class="content">
             <div class="logo">Fidelis</div>
-            <!-- Seção para adicionar foto -->
+
             <div class="photo-container">
                 <img src="../images/foto de usuario.webp" alt="Foto de Perfil" id="profileImage">
-                <label for="uploadPhoto">Escolher Foto</label>
+                <label for="photo">Escolher Foto</label>
                 <input type="file" id="photo" accept="image/*" onchange="loadPhoto(event)">
             </div>
-            <!-- Formulário -->
+
             <div class="form-container">
                 <h2 class="title">Complete seu cadastro</h2>
                 <form class="form" id="additionalDataForm">
@@ -46,12 +44,17 @@
     <script>
         function loadPhoto(event) {
             const profileImage = document.getElementById('profileImage');
-            profileImage.src = URL.createObjectURL(event.target.files[0]);
+            const file = event.target.files[0];
+            if (file) {
+                profileImage.src = URL.createObjectURL(file);
+                profileImage.onload = () => {
+                    URL.revokeObjectURL(profileImage.src);
+                };
+            }
         }
     </script>
 
     <script type="module" src="../script/firebase.js"></script>
-
     <script type="module" src="../script/dadosAdicionais.js"></script>
 </body>
 </html>
