@@ -3,24 +3,29 @@ import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebase
 
 const form = {
     signEmail: () => document.getElementById('signEmail'),
-    signPassword: () => document.getElementById('signPassword')
+    signPassword: () => document.getElementById('signPassword'),
+    confirmPassword: () => document.getElementById('confirmPassword')
 };
 
-function register() {
+async function register() {
     const email = form.signEmail().value;
     const password = form.signPassword().value;
+    const confirmPassword = form.confirmPassword().value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(response => {
-            console.log('Cadastro bem-sucedido:', response.user);
-            alert('Usuário cadastrado com sucesso!');
-            // Redirecionar o usuário, se necessário
-            // window.location.href = "/Usuario/hub.html";
-        })
-        .catch(error => {
-            console.error('Erro no cadastro:', error.message);
-            alert('Erro ao cadastrar: ' + error.message);
-        });
+    if (password !== confirmPassword) {
+        alert('As senhas não coincidem. Tente novamente.');
+        return;
+    }
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        window.location.href = `dadosAdicionais.html?uid=${user.uid}`;
+    } catch (error) {
+        console.error('Erro no cadastro:', error.message);
+        alert('Erro ao cadastrar: ' + error.message);
+    }
 }
 
 // Listener no formulário

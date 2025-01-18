@@ -1,16 +1,18 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDTCUOChzYTvKAICUSM7ngYXBH7mqZZS0g",
-    authDomain: "fidelis-e1283.firebaseapp.com",
-    projectId: "fidelis-e1283",
-    storageBucket: "fidelis-e1283.firebasestorage.app",
-    messagingSenderId: "120572619345",
-    appId: "1:120572619345:web:9b8435271d95c4d56ea670",
-    measurementId: "G-GTYJR7DW78"
+    apiKey: "AIzaSyAlxs6P9Z3Odzi_o_ciVx3H91xdrdeEbIQ",
+    authDomain: "fidelis2-3dcb4.firebaseapp.com",
+    projectId: "fidelis2-3dcb4",
+    storageBucket: "fidelis2-3dcb4.firebasestorage.app",
+    messagingSenderId: "1027242471882",
+    appId: "1:1027242471882:web:5f1557000ad594371f5f33"
 };
 
 // Inicializa o Firebase App e Auth
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
