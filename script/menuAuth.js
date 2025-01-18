@@ -34,14 +34,26 @@ auth.onAuthStateChanged(async (user) => {
     }
 });
 
-document.getElementById('logoutButton').addEventListener('click', (e) => {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logoutButton');
 
-    auth.signOut()
-        .then(() => {
-            window.location.href = "login.html";
-        })
-        .catch((error) => {
-            console.error("Erro ao deslogar o usuário:", error);
-        });
+    if (!logoutButton) {
+        console.error("Botão de logout não encontrado no DOM. Verifique o ID no HTML.");
+        return; 
+    }
+
+    logoutButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        try {
+            console.log("Tentando deslogar o usuário...");
+            await auth.signOut();
+            console.log("Logout bem-sucedido!");
+            window.location.href = "login.html"; 
+        } catch (error) {
+            console.error("Erro ao deslogar o usuário:", error.message);
+            alert("Erro ao deslogar: " + error.message);
+        }
+    });
 });
+
