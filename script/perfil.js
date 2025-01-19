@@ -32,24 +32,4 @@ function voltarMenu() {
   document.getElementById('menu-dados').style.display = 'block';
 }
 
-const btnAlterarFoto = document.getElementById('btn-alterar-foto');
-const uploadFoto = document.getElementById('upload-foto');
-const fotoPerfil = document.getElementById('foto-perfil');
 
-btnAlterarFoto.addEventListener('click', () => {
-    uploadFoto.click(); 
-});
-
-
-uploadFoto.addEventListener('change', (event) => {
-    const file = event.target.files[0]; 
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            fotoPerfil.src = e.target.result; 
-        };
-
-        reader.readAsDataURL(file); 
-    }
-});
