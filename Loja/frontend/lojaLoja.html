@@ -93,8 +93,13 @@
                 <h3>Criar Nova Postagem</h3>
                 <!-- Formulário para criar postagens -->
                 <form id="create-post-form">
+                    <input type="file" id="post-image" accept="image/*">
+                    <div id="image-preview-container" style="display:none;">
+                        <img id="image-preview" src="" alt="Imagem do Post" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    </div>
                     <input type="text" id="post-title" placeholder="Título da Postagem" required>
                     <textarea id="post-description" placeholder="Descrição da Postagem" rows="4" required></textarea>
+                    
                     <button type="submit">Criar Postagem</button>
                 </form>
             </div>
@@ -165,7 +170,7 @@
         <script src="./script/loja.js"></script>
         <script src="./script/pesquisa.js"></script>
         <script src="./script/perfil.js"></script>
-        <script src="./script/post.js"></script>
+        <script type="module" src="./script/post.js"></script>
     
 </body>
 </html>

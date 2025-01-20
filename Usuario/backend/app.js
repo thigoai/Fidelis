@@ -22,12 +22,19 @@ const loadPosts = () => {
                         <div class="post-content">
                             <h3 class="post-title">${data.title}</h3>
                             <p class="post-description">${data.description}</p>
+                            <a href="${data.link}" class="post-link" target="_blank">Veja mais sobre</a>
                             <div class="post-actions">
-                                <button class="like-button">Curtir</button>
-                                <button class="share-button">Compartilhar</button>
+                                <div class="action">
+                                    <i class="fa fa-thumbs-up"></i> <span class="action-label">Curtir</span>
+                                </div>
+                                <div class="action">
+                                    <i class="fa fa-share"></i> <span class="action-label">Compartilhar</span>
+                                </div>
                             </div>
+
                         </div>
-                    </div>`;
+                    </div>
+                `;
                 feed.innerHTML += postHtml;
             });
         })
