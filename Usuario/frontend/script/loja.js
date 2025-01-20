@@ -26,6 +26,8 @@ const lojas = {
     }
 };
 
+
+
 // Função para obter o parâmetro "id" da URL
 function getLojaID() {
     const params = new URLSearchParams(window.location.search);
