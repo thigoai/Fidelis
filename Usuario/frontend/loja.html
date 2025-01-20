@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Loja</title>
+    <link rel="stylesheet" href="./css/loja.css">
+    <link rel="stylesheet" href="./css/progresso.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/ranking.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="main-header">
+            <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="hub.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> <span>Procurar</span></a></li>
+                    <li><a href="passaport.html"><i class="fas fa-passport"></i> <span>Passaporte</span></a></li>
+                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> <span>Recompensas</span></a></li>
+                    <li><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat</span></a></li>
+                </ul>                
+            </nav>
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <ul>
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar" id="search-bar" style="display: none;">
+            <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="loja-header">
+                <img src="./images/cafe.jpg" alt="Ícone" class="feature-icon">
+                <h1 id="nome-loja">Loja Exemplo</h1>
+            </div>
+            <nav class="loja-nav">
+                <ul>
+                    <li>
+                        <a href="#" onclick="mostrarSubpagina('novidades')">
+                            <i class="fas fa-bullhorn"></i> Novidades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="mostrarSubpagina('progresso')">
+                            <i class="fas fa-chart-line"></i> Progresso Cliente
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="mostrarSubpagina('ranking')">
+                            <i class="fas fa-trophy"></i> Ranking de Clientes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- Conteúdo Dinâmico -->
+    <main class="content">
+        <!-- Subpágina Novidades -->
+        <section id="novidades" class="subpagina active">
+            <h2>Novidades</h2>
+            <div class="feed">
+                <h2>Novidades:</h2>
+                <!-- As postagens serão carregadas aqui dinamicamente -->
+            </div>
+        </section>
+
+
+        <section id="progresso" class="subpagina">
+            <h2>Programas: </h2>
+            <div id="cliente-info" class="cliente-info-card">
+                <div class="info-row">
+                    <label for="recompensa-nome">Recompensa:</label>
+                    <span id="recompensa-nome">-</span>
+                </div>
+        
+                <div class="info-row">
+                    <label for="cliente-pontos">Pontos:</label>
+                    <span id="cliente-pontos">-</span>
+                </div>
+        
+                <div class="info-row">
+                    <label for="cliente-meta">Meta:</label>
+                    <span id="cliente-meta">-</span>
+                </div>
+        
+                <div class="info-row">
+                    <label for="cliente-status">Status:</label>
+                    <span id="cliente-status">-</span>
+                </div>
+        
+                <button id="resgatar-button" class="resgatar-btn" style="display: none;" onclick="resgatarRecompensa()">Resgatar Recompensa</button>
+            </div>
+        </section>
+        
+
+        <!-- Subpágina Ranking -->
+        <section id="ranking" class="subpagina">
+            <h2>Ranking de Clientes</h2>
+            <p>Veja quem são os clientes mais engajados da loja.</p>
+            <div class="ranking-container">
+                <section class="podium">
+                    <ul>
+                        <!-- Os itens serão preenchidos dinamicamente -->
+                    </ul>
+                </section>
+                <section class="others">
+                    <ul>
+                        <!-- Outros clientes podem ser listados aqui, se necessário -->
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="script/menu.js"></script>
+    <script type="module" src="script/menuAuth.js"></script>
+
+    <!-- Referência ao script principal -->
+    <script src="../backend/app.js"></script>
+
+    <script src="./script/loja.js"></script>
+    <script src="./script/pesquisa.js"></script>
+    <script src="./script/perfil.js"></script>
+    <script src="./script/resultado.js"></script>
+
+</body>
+</html>

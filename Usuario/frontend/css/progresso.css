@@ -1,0 +1,72 @@
+
+/* Container Geral */
+.cliente-info-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Linha de Informação */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-row label {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-row input, .info-row span {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 60%;
+    text-align: left;
+}
+
+/* Input Desabilitado */
+.info-row input[disabled] {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border: none;
+}
+
+/* Botão de Resgate */
+.resgatar-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.resgatar-btn:hover {
+    background-color: #0077b6;
+    transform: translateY(-2px);
+}
+
+.resgatar-btn:active {
+    transform: translateY(0);
+}
+
+.resgatar-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

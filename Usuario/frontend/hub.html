@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidelis - Hub</title>
+    <link rel="stylesheet" href="css/hub.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1 class="logo"><a href="hub.html">Fidelis</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="hub.html" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="pesquisa.html" id="search-link"><i class="fas fa-search"></i> <span>Procurar</span></a></li>
+                    <li><a href="passaport.html"><i class="fas fa-passport"></i> <span>Passaporte</span></a></li>
+                    <li><a href="recompensas.html"><i class="fas fa-gift"></i> <span>Recompensas</span></a></li>
+                    <li><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat</span></a></li>
+                </ul>                
+            </nav>
+            <div class="profile-container">
+                <img src="images/usuario_default.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+                <div class="dropdown-menu" id="dropdownMenu">
+                  <ul>
+                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li><a href="#" id="logoutButton">Sair</a></li>
+                  </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="void">
+            
+        </div>
+
+
+        <div class="search-container">
+            <div class="search-bar" id="search-bar" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35" />
+                </svg>
+                <input type="text" placeholder="Digite para pesquisar..." id="search-input">
+            </div>
+        </div>
+
+        <section class="sugestoes">
+            <h2>Sugestões:</h2>
+            <div class="carousel-container">
+                <button id="prev1" class="scroll-btn left" onclick="scrollCarousel('carousel1', -1, 'prev1', 'next1')">&lt;</button>
+                <div id="carousel1" class="carousel">
+                    <div class="item" data-id="1" data-link="loja.html">Item 1</div>
+                    <div class="item" data-id="2" data-link="loja.html">Item 2</div>
+                    <div class="item" data-id="3" data-link="loja.html">Item 3</div>
+                    <div class="item" data-id="4" data-link="loja.html">Item 4</div>
+                    <div class="item" data-id="5" data-link="loja.html">Item 5</div>
+                    <div class="item" data-id="6" data-link="loja.html">Item 6</div>
+                    <div class="item" data-id="7" data-link="loja.html">Item 7</div>
+                    <div class="item" data-id="8" data-link="loja.html">Item 8</div>
+                    <div class="item" data-id="9" data-link="loja.html">Item 9</div>
+                </div>
+                <button id="next1" class="scroll-btn right" onclick="scrollCarousel('carousel1', 1, 'prev1', 'next1')">&gt;</button>
+            </div>          
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <button id="close-modal" class="close-btn">&times;</button>
+              <div id="modal-body"></div>
+            </div>
+          </div>
+                         
+          
+      
+        <section class="promocao">
+            <h2>Promoções do dia:</h2>
+            <div class="carousel-container">
+                <button id="prev2" class="scroll-btn left" onclick="scrollCarousel('carousel2', -1, 'prev2', 'next2')">&lt;</button>
+                <div id="carousel2" class="carousel">
+                    <div class="promo-item" data-link="loja.html">
+                        <img src="images/promocao.avif" alt="Promoção 1">
+                    </div>
+                    <div class="promo-item" data-link="loja.html">
+                        <img src="../images/promocao.avif" alt="Promoção 2">
+                    </div>
+                    <div class="promo-item" data-link="loja.html">
+                        <img src="../images/promocao.avif" alt="Promoção 3">
+                    </div>
+                    <div class="promo-item" data-link="loja.html">
+                        <img src="../images/promocao.avif" alt="Promoção 4">
+                    </div>
+                    <div class="promo-item" data-link="loja.html">
+                        <img src="../images/promocao.avif" alt="Promoção 5">
+                    </div>
+                </div>
+                <button id="next2" class="scroll-btn right" onclick="scrollCarousel('carousel2', 1, 'prev2', 'next2')">&gt;</button>
+            </div>
+        </section>
+        
+      
+        <section class="favoritas">
+            <h2>Lojas:</h2>
+            <div class="carousel-container">
+                <button id="prev3" class="scroll-btn left" onclick="scrollCarousel('carousel3', -1, 'prev3', 'next3')">&lt;</button>
+                <div id="carousel3" class="carousel">
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="#">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="#">
+                    </div>
+                    <div class="favorite-item" data-link="loja.html">
+                        <img src="#">
+                    </div>
+                      
+                </div>
+                <button id="next3" class="scroll-btn right" onclick="scrollCarousel('carousel3', 1, 'prev3', 'next3')">&gt;</button>
+            </div>
+        </section>
+        <footer class="main-footer">
+            <p>&copy; 2024 Fidelis. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script type="module" src="script/firebase.js"></script> 
+    <script type="module" src="script/menuAuth.js"></script>
+    <script src="script/pesquisa.js"></script>
+    <script src="script/modal.js"></script>
+    <script src="script/carrosel.js"></script>
+    <script src="script/menu.js"></script>
+    
+</body>
+</html>

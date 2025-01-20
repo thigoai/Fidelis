@@ -1,0 +1,156 @@
+/* Estilo para o cabeçalho */
+.main-header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    justify-content: left;
+    align-items: left;
+    margin-left: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3e3e3e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.nav-links li a i {
+    font-size: 1.2rem;
+}
+
+.nav-links li a:hover {
+    color: #0077b6;
+}
+
+.nav-links li a.active {
+    font-weight: bold; /* Torna o texto mais destacado */
+    color: #0077b6;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Foto de perfil */
+.profile-container {
+    position: relative;
+    margin-right: 50px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3e3e3e;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+    border-color: #0077b6;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Interação para mostrar dropdown */
+.profile-container:hover .dropdown-menu {
+    display: block;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .nav-links li a {
+        justify-content: center;
+        gap: 0; 
+    }
+
+    .nav-links li a span {
+        display: none; 
+    }
+
+    .nav-links li a i {
+        font-size: 1.2rem; 
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .logo {
+        margin-left: 2px;
+    }
+}
+
+.void {
+    padding-top: 60px;  
+}

@@ -1,0 +1,169 @@
+.programa-progresso table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Para scroll horizontal */
+    display: block; /* Necessário para scroll em telas pequenas */
+}
+
+.programa-progresso th, .programa-progresso td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Mais espaçamento para melhor legibilidade */
+    text-align: left;
+    word-wrap: break-word; /* Para evitar estouro de texto */
+}
+
+.programa-progresso th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333; /* Melhor contraste para acessibilidade */
+}
+
+.programa-progresso tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.programa-progresso tr:hover {
+    background-color: #f1f1f1;
+}
+
+.programa-progresso th, 
+.programa-progresso td {
+    min-width: 100px; /* Largura mínima para evitar distorções */
+}
+
+@media (max-width: 768px) {
+    .programa-progresso table {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .programa-progresso th, 
+    .programa-progresso td {
+        padding: 8px; /* Reduz o espaçamento em telas menores */
+    }
+}
+
+/* Estilos para a área de adicionar cliente */
+.adicionar-cliente {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.adicionar-cliente h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#adicionar-cliente form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#adicionar-cliente input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#adicionar-cliente button {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#adicionar-cliente button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para a tabela de progresso */
+.programa-progresso table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.programa-progresso th, .programa-progresso td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.programa-progresso th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.programa-progresso tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.programa-progresso tr:hover {
+    background-color: #f1f1f1;
+}
+
+.programa-progresso table {
+    display: block;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Estilos para a tabela */
+.programa-progresso table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .programa-progresso th, .programa-progresso td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para a barra de progresso */
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4caf50;
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    border-radius: 10px;
+  }
+  
+
+/* Estilos para uma experiência mais responsiva */
+@media (max-width: 768px) {
+    .adicionar-cliente form {
+        flex-direction: column;
+    }
+
+    .adicionar-cliente input,
+    .adicionar-cliente button {
+        width: 100%;
+    }
+    
+    .programa-progresso table {
+        width: 100%;
+    }
+}
+

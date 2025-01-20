@@ -1,0 +1,197 @@
+/* Botão de adicionar recompensa */
+.add-reward {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-reward .add-button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-reward .add-button:hover {
+    background-color: #005f8b;
+}
+
+/* Lista de recompensas */
+.rewards-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rewards-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.rewards-list li span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.rewards-list .edit-button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rewards-list .edit-button:hover {
+    background-color: #005f8b;
+}
+
+/* Formulário escondido */
+.rewards-form.hidden {
+    display: none;
+}
+
+
+.rewards-section {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.rewards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.reward-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.reward-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.reward-item p {
+    margin: 5px 0 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.rewards-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.rewards-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #005f8b;
+}
+
+.reward-item h3 i,
+.reward-item p i,
+.rewards-form label i {
+    margin-right: 8px;
+    color: #0077b6;
+}
+
+.add-button i {
+    margin-right: 5px;
+}
+
+.form-actions button i {
+    margin-right: 5px;
+}
+
+.rewards-list .reward-item h3 {
+    display: flex;
+    align-items: center;
+}
+
+.rewards-list .reward-item p {
+    display: flex;
+    align-items: center;
+}
+
+.rewards-form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.rewards-form select {
+    appearance: none;
+    background-image: none; /* Remove ícone padrão */
+}
+
+.edit-button {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.edit-button i {
+    margin-right: 5px;
+}
+
