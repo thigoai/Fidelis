@@ -1,4 +1,4 @@
-/* Estilo para o cabeçalho */
+/* Estilo para o cabeçalho */ 
 .main-header {
     position: fixed;
     display: flex;
@@ -8,10 +8,9 @@
     height: 70px;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 0;
+    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
     background-color: #f5f5f5;
-    padding: 10px 20px;
     z-index: 1000;
 }
 
@@ -20,8 +19,6 @@
     font-weight: bold;
     color: #333;
     text-decoration: none;
-    justify-content: left;
-    align-items: left;
     margin-left: 20px;
 }
 
@@ -34,7 +31,7 @@
 }
 
 .nav-links li {
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .nav-links li a {
@@ -57,7 +54,7 @@
 }
 
 .nav-links li a.active {
-    font-weight: bold; /* Torna o texto mais destacado */
+    font-weight: bold;
     color: #0077b6;
 }
 
@@ -131,15 +128,15 @@
 @media screen and (max-width: 768px) {
     .nav-links li a {
         justify-content: center;
-        gap: 0; 
+        gap: 0;
     }
 
     .nav-links li a span {
-        display: none; 
+        display: none;
     }
 
     .nav-links li a i {
-        font-size: 1.2rem; 
+        font-size: 1rem; /* Reduzindo o tamanho do ícone */
     }
 
     .nav-links li {
@@ -147,7 +144,14 @@
     }
 
     .logo {
-        margin-left: 2px;
+        font-size: 1.2rem; /* Reduzindo o tamanho da logo */
+        margin-left: 0;
+    }
+
+    .profile-picture {
+        width: 30px; /* Reduzindo o tamanho da foto de perfil */
+        height: 30px;
+        margin-right: 10px;
     }
 }
 

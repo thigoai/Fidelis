@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Estilos Globais */
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -12,12 +12,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    
 }
 
 /* Banner */
 .banner {
-    margin-top: 80px; /* Espaço para a barra superior */
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -30,17 +29,18 @@ body {
 
 /* Barra lateral */
 .sidebar {
-    position: fixed; 
-    top: 90px; 
-    left: 0; 
-    width: 250px; 
-    height: 100vh; 
-    background-color: #e5e5e5; 
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 90px);
+    background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 10px;
-  }
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
 .loja-header {
     text-align: center;
@@ -74,9 +74,10 @@ body {
     text-decoration: none;
     color: #000;
     font-weight: 600;
-    padding: 5px;
+    padding: 10px;
     display: block;
     transition: background-color 0.3s, color 0.3s;
+    text-align: center;
 }
 
 .loja-nav a:hover {
@@ -84,12 +85,11 @@ body {
     color: #fff;
 }
 
+/* Conteúdo principal */
 .content {
-    margin-left: 270px; /* Espaço para a barra lateral */
+    margin-left: 270px;
     padding: 20px;
-    top: 120px;
     flex-grow: 1;
-    margin-right: 270px;
 }
 
 .subpagina {
@@ -100,17 +100,6 @@ body {
     display: block;
 }
 
-ul, ol {
-    margin: 20px 0;
-    padding: 0 20px;
-}
-
-progress {
-    width: 100%;
-    height: 20px;
-    margin-bottom: 10px;
-}
-
 /* Estilo do Feed */
 .feed {
     display: flex;
@@ -119,7 +108,6 @@ progress {
     margin-top: 20px;
 }
 
-/* Card de Post */
 .post {
     background-color: white;
     border: 1px solid #ddd;
@@ -133,14 +121,6 @@ progress {
     transform: translateY(-5px);
 }
 
-/* Imagem do Post */
-.post-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Conteúdo do Post */
 .post-content {
     padding: 15px 20px;
 }
@@ -158,88 +138,47 @@ progress {
     line-height: 1.6;
 }
 
-/* Ações do Post */
-.post-actions {
-    display: flex;
-    gap: 10px;
+/* Responsividade */
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 220px;
+    }
 }
 
-.like-button, .share-button {
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        padding: 10px 0;
+    }
+
+    .loja-nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
 }
 
-.like-button:hover, .share-button:hover {
-    background-color: #005f8b;
-}
+@media screen and (max-width: 480px) {
+    #nome-loja {
+        font-size: 1.5rem;
+    }
 
-.ranking-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+    .loja-header img {
+        height: 150px;
+    }
 
-.ranking-item img.profile-small {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.ranking-item span {
-    font-size: 16px;
-    color: #333;
-}
-
-/* Rodapé */
-.main-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    font-size: 0.9rem;
-    color: #666;
-    border-top: 1px solid #ddd;
-}
-
-.search-container {
-    position: relative;
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-bar {
-    position: relative;
-    width: 100%;
-    max-width: 700px; 
-}
-
-#search-input {
-    width: 100%;
-    padding: 10px 40px; 
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 30px; 
-    box-sizing: border-box;
-    outline: none; 
-}
-
-.search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: #555; 
-    pointer-events: none; 
+    .post-title {
+        font-size: 1.2rem;
+    }
 }
