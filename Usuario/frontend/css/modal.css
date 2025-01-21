@@ -1,38 +1,41 @@
-
+/* Estilização geral do modal */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro translúcido */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; 
-  visibility: hidden; 
+  z-index: 1000;
+  visibility: hidden; /* Inicialmente oculto */
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Mostra o modal quando a classe .show é adicionada */
 .modal.show {
   visibility: visible;
   opacity: 1;
 }
 
+/* Container principal do modal */
 .modal-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Alinha os filhos lado a lado */
   background-color: #fff;
   width: 80%;
   max-width: 700px;
   height: 350px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  position: relative; 
-  overflow: hidden; 
+  position: relative; /* Necessário para o botão fechar */
+  overflow: hidden;
 }
 
+/* Botão de fechar o modal */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -42,67 +45,90 @@
   font-size: 24px;
   cursor: pointer;
   color: #333;
+  z-index: 2; /* Certifica-se de que esteja acima do conteúdo */
 }
 
-
+/* Estilização da imagem no modal */
 .modal-image {
-  flex: 1;
-  max-width: 50%; 
-  height: auto;
-  background-size: contain; 
-  background-position: center;
-  background-repeat: no-repeat;
+  flex: 1; /* Ocupa metade do espaço */
+  max-width: 50%; /* Garante que não ultrapasse metade */
+  height: 100%; /* Ocupa a altura total */
 }
 
 .modal-image img {
-  max-width: 100%;
-  height: auto;
-  z-index: 1; 
+  width: 100%; /* Preenche todo o espaço disponível */
+  height: 100%; 
+  object-fit: cover; /* Ajusta a imagem para preencher o espaço */
+  border-radius: 8px 0 0 8px; /* Bordas arredondadas no lado esquerdo */
 }
 
 .modal-details {
-  flex: 1;
-  max-width: 50%; 
-  height: auto;
-  z-index: 2;
+  flex: 1; /* Garante que ocupa metade do espaço */
+  max-width: 50%;
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Organiza em coluna */
   justify-content: space-between;
+  color: #000; /* Texto visível */
 }
 
+
+/* Título do modal */
 .modal-header {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 16px;
+  color: #222;
 }
 
+/* Descrição do modal */
 .modal-description {
   font-size: 16px;
   margin-bottom: 16px;
   color: #555;
+  line-height: 1.5;
 }
 
+/* Informações da loja */
+.modal-store {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+/* Preços no modal */
 .modal-pricing {
   font-size: 16px;
   display: flex;
-  gap: 8px;
+  gap: 8px; /* Espaço entre os preços */
   align-items: center;
 }
 
 .price-now {
-  color: #0077b6;
+  color: #0077b6; /* Azul para o preço atual */
   font-weight: bold;
   font-size: 18px;
 }
 
 .price-old {
   color: #383636;
-  text-decoration: line-through;
+  text-decoration: line-through; /* Preço antigo riscado */
 }
 
-.modal-store {
-  font-size: 14px;
-  color: #777;
-  margin-top: 8px;
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column; /* Empilha o conteúdo em telas menores */
+    height: auto;
+  }
+
+  .modal-image {
+    max-width: 100%; /* Imagem ocupa a largura total */
+    height: 200px; /* Altura fixa */
+  }
+
+  .modal-details {
+    max-width: 100%; /* Detalhes ocupam a largura total */
+    padding: 16px;
+  }
 }
