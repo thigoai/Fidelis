@@ -1,0 +1,90 @@
+name: fidelis
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fidelis-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fidelis}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fidelis_dev_pwd}
+      POSTGRES_DB: ${POSTGRES_DB:-fidelis}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fidelis} -d ${POSTGRES_DB:-fidelis}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [fidelis-net]
+
+  backend:
+    build:
+      context: ./backend
+      target: dev
+    container_name: fidelis-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-fidelis}:${POSTGRES_PASSWORD:-fidelis_dev_pwd}@postgres:5432/${POSTGRES_DB:-fidelis}?sslmode=disable
+      PORT: ${BACKEND_PORT:-8080}
+      JWT_SECRET: ${JWT_SECRET:-troque-isto-em-producao}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
+      GIN_MODE: debug
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    volumes:
+      - ./backend:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [fidelis-net]
+
+  frontend-loja:
+    build:
+      context: ./frontend/loja
+      target: dev
+    container_name: fidelis-frontend-loja
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
+    ports:
+      - "${FRONTEND_LOJA_PORT:-5173}:5173"
+    volumes:
+      - ./frontend/loja:/app
+      - loja_node_modules:/app/node_modules
+    depends_on:
+      - backend
+    networks: [fidelis-net]
+
+  frontend-cliente:
+    build:
+      context: ./frontend/cliente
+      target: dev
+    container_name: fidelis-frontend-cliente
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
+    ports:
+      - "${FRONTEND_CLIENTE_PORT:-5174}:5173"
+    volumes:
+      - ./frontend/cliente:/app
+      - cliente_node_modules:/app/node_modules
+    depends_on:
+      - backend
+    networks: [fidelis-net]
+
+volumes:
+  postgres_data:
+  go_mod_cache:
+  go_build_cache:
+  loja_node_modules:
+  cliente_node_modules:
+
+networks:
+  fidelis-net:
+    driver: bridge
