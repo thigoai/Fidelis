@@ -26,6 +26,7 @@ type Deps struct {
 	Rewards      *handler.RewardsHandler
 	Redemptions  *handler.RedemptionHandler
 	Transactions *handler.TransactionsHandler
+	Stats        *handler.StatsHandler
 }
 
 func New(deps Deps) *gin.Engine {
@@ -73,7 +74,7 @@ func New(deps Deps) *gin.Engine {
 			deps.Rewards.Delete,
 		)
 
-		// ===== Clientes e extrato da loja =====
+		// ===== Clientes, extrato e analytics da loja =====
 		api.GET("/stores/:id/members",
 			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
 			deps.Stores.ListMembers,
@@ -81,6 +82,10 @@ func New(deps Deps) *gin.Engine {
 		api.GET("/stores/:id/transactions",
 			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
 			deps.Transactions.ListByStore,
+		)
+		api.GET("/stores/:id/stats",
+			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
+			deps.Stats.Get,
 		)
 
 		// ===== Pontuar e resgatar =====

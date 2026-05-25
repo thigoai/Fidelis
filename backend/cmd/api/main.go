@@ -50,6 +50,7 @@ func main() {
 	membershipRepo := repository.NewMembershipRepository(pool)
 	txRepo := repository.NewPointTransactionRepository(pool)
 	rewardRepo := repository.NewRewardRepository(pool)
+	statsRepo := repository.NewStatsRepository(pool)
 
 	authSvc := service.NewAuthService(userRepo, jwtMgr)
 	registrationSvc := service.NewRegistrationService(pool, jwtMgr)
@@ -60,6 +61,7 @@ func main() {
 	rewardsSvc := service.NewRewardsService(rewardRepo, storeRepo)
 	redemptionsSvc := service.NewRedemptionService(pool)
 	transactionsSvc := service.NewTransactionsService(txRepo, storeRepo)
+	statsSvc := service.NewStatsService(statsRepo, storeRepo)
 
 	r := router.New(router.Deps{
 		Pool:         pool,
@@ -72,6 +74,7 @@ func main() {
 		Rewards:      handler.NewRewardsHandler(rewardsSvc),
 		Redemptions:  handler.NewRedemptionHandler(redemptionsSvc),
 		Transactions: handler.NewTransactionsHandler(transactionsSvc),
+		Stats:        handler.NewStatsHandler(statsSvc),
 	})
 
 	srv := &http.Server{

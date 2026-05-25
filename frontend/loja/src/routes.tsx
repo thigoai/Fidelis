@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import { AuthProvider } from '@/auth/AuthContext'
 import { Layout } from '@/components/Layout'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
+import AnalyticsPage from '@/pages/Analytics'
 import ClientesPage from '@/pages/Clientes'
 import DashboardPage from '@/pages/Dashboard'
 import ExtratoPage from '@/pages/Extrato'
@@ -23,6 +24,7 @@ export function AppRoutes() {
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/analytics" element={<AnalyticsPage />} />
               <Route path="/rewards" element={<RewardsPage />} />
               <Route path="/clientes" element={<ClientesPage />} />
               <Route path="/extrato" element={<ExtratoPage />} />
