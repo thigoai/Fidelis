@@ -18,15 +18,16 @@ type Deps struct {
 	Pool *pgxpool.Pool
 	JWT  *jwtauth.Manager
 
-	Auth         *handler.AuthHandler
-	Users        *handler.UsersHandler
-	Stores       *handler.StoresHandler
-	Points       *handler.PointsHandler
-	Balance      *handler.BalanceHandler
-	Rewards      *handler.RewardsHandler
-	Redemptions  *handler.RedemptionHandler
-	Transactions *handler.TransactionsHandler
-	Stats        *handler.StatsHandler
+	Auth          *handler.AuthHandler
+	Users         *handler.UsersHandler
+	Stores        *handler.StoresHandler
+	Points        *handler.PointsHandler
+	Balance       *handler.BalanceHandler
+	Rewards       *handler.RewardsHandler
+	Redemptions   *handler.RedemptionHandler
+	Transactions  *handler.TransactionsHandler
+	Stats         *handler.StatsHandler
+	PasswordReset *handler.PasswordResetHandler
 }
 
 func New(deps Deps) *gin.Engine {
@@ -41,12 +42,13 @@ func New(deps Deps) *gin.Engine {
 		auth.POST("/login", deps.Auth.Login)
 		auth.POST("/register/lojista", deps.Auth.RegisterLojista)
 		auth.POST("/register/cliente", deps.Auth.RegisterCliente)
+		auth.POST("/password-reset/request", deps.PasswordReset.Request)
+		auth.POST("/password-reset/confirm", deps.PasswordReset.Confirm)
 	}
 
 	// ===== API autenticada =====
 	api := r.Group("/api", middleware.Auth(deps.JWT))
 	{
-		// "Eu"
 		api.GET("/me", deps.Users.GetMe)
 		api.PATCH("/me", deps.Users.UpdateMe)
 		api.POST("/me/password", deps.Users.ChangePassword)

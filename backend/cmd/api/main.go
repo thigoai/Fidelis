@@ -15,6 +15,7 @@ import (
 	"github.com/fidelis/api/internal/repository"
 	"github.com/fidelis/api/internal/router"
 	"github.com/fidelis/api/internal/service"
+	"github.com/fidelis/api/pkg/email"
 	"github.com/fidelis/api/pkg/jwtauth"
 )
 
@@ -45,12 +46,21 @@ func main() {
 	// ===== Wiring =====
 	jwtMgr := jwtauth.New(cfg.JWTSecret, cfg.JWTExpiresIn)
 
+	emailSender := email.New(email.Config{
+		Host: cfg.SMTPHost,
+		Port: cfg.SMTPPort,
+		User: cfg.SMTPUser,
+		Pass: cfg.SMTPPass,
+		From: cfg.SMTPFrom,
+	})
+
 	userRepo := repository.NewUserRepository(pool)
 	storeRepo := repository.NewStoreRepository(pool)
 	membershipRepo := repository.NewMembershipRepository(pool)
 	txRepo := repository.NewPointTransactionRepository(pool)
 	rewardRepo := repository.NewRewardRepository(pool)
 	statsRepo := repository.NewStatsRepository(pool)
+	resetRepo := repository.NewPasswordResetRepository(pool)
 
 	authSvc := service.NewAuthService(userRepo, jwtMgr)
 	registrationSvc := service.NewRegistrationService(pool, jwtMgr)
@@ -62,19 +72,21 @@ func main() {
 	redemptionsSvc := service.NewRedemptionService(pool)
 	transactionsSvc := service.NewTransactionsService(txRepo, storeRepo)
 	statsSvc := service.NewStatsService(statsRepo, storeRepo)
+	resetSvc := service.NewPasswordResetService(userRepo, resetRepo, emailSender, cfg.AppURLLoja, cfg.AppURLCliente)
 
 	r := router.New(router.Deps{
-		Pool:         pool,
-		JWT:          jwtMgr,
-		Auth:         handler.NewAuthHandler(authSvc, registrationSvc),
-		Users:        handler.NewUsersHandler(usersSvc),
-		Stores:       handler.NewStoresHandler(storesSvc),
-		Points:       handler.NewPointsHandler(pointsSvc),
-		Balance:      handler.NewBalanceHandler(balanceSvc),
-		Rewards:      handler.NewRewardsHandler(rewardsSvc),
-		Redemptions:  handler.NewRedemptionHandler(redemptionsSvc),
-		Transactions: handler.NewTransactionsHandler(transactionsSvc),
-		Stats:        handler.NewStatsHandler(statsSvc),
+		Pool:          pool,
+		JWT:           jwtMgr,
+		Auth:          handler.NewAuthHandler(authSvc, registrationSvc),
+		Users:         handler.NewUsersHandler(usersSvc),
+		Stores:        handler.NewStoresHandler(storesSvc),
+		Points:        handler.NewPointsHandler(pointsSvc),
+		Balance:       handler.NewBalanceHandler(balanceSvc),
+		Rewards:       handler.NewRewardsHandler(rewardsSvc),
+		Redemptions:   handler.NewRedemptionHandler(redemptionsSvc),
+		Transactions:  handler.NewTransactionsHandler(transactionsSvc),
+		Stats:         handler.NewStatsHandler(statsSvc),
+		PasswordReset: handler.NewPasswordResetHandler(resetSvc),
 	})
 
 	srv := &http.Server{

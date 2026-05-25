@@ -29,4 +29,7 @@ var (
 
 	// Perfil
 	ErrPasswordIncorrect = errors.New("current password incorrect")
+
+	// Recuperacao de senha
+	ErrInvalidToken = errors.New("invalid or expired token")
 )

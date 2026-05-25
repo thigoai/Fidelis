@@ -4,7 +4,9 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router'
 import { ApiError } from '@/api/client'
 import { useAuth } from '@/auth/AuthContext'
 
-type LocationState = { from?: { pathname?: string } } | null
+type LocationState =
+  | { from?: { pathname?: string }; passwordReset?: boolean }
+  | null
 
 export default function LoginPage() {
   const { user, status, login } = useAuth()
@@ -20,6 +22,8 @@ export default function LoginPage() {
     const from = (location.state as LocationState)?.from?.pathname ?? '/dashboard'
     return <Navigate to={from} replace />
   }
+
+  const passwordReset = (location.state as LocationState)?.passwordReset === true
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -46,6 +50,12 @@ export default function LoginPage() {
           <h1 className="text-2xl font-semibold">Entrar</h1>
         </header>
 
+        {passwordReset && (
+          <div className="rounded-lg bg-emerald-950/40 px-3 py-2 text-sm text-emerald-300">
+            Senha atualizada. Entre com a nova.
+          </div>
+        )}
+
         <Field label="Email" type="email" autoComplete="email" value={email} onChange={setEmail} />
         <Field label="Senha" type="password" autoComplete="current-password" value={password} onChange={setPassword} />
 
@@ -61,12 +71,17 @@ export default function LoginPage() {
           {submitting ? 'Entrando…' : 'Entrar'}
         </button>
 
-        <p className="text-center text-sm text-slate-400">
-          Novo por aqui?{' '}
-          <Link to="/register" className="font-medium text-violet-400 hover:underline">
-            Criar conta
+        <div className="flex flex-col gap-1 text-center text-sm text-slate-400">
+          <Link to="/esqueci-senha" className="font-medium text-violet-400 hover:underline">
+            Esqueci minha senha
           </Link>
-        </p>
+          <span>
+            Novo por aqui?{' '}
+            <Link to="/register" className="font-medium text-violet-400 hover:underline">
+              Criar conta
+            </Link>
+          </span>
+        </div>
       </form>
     </div>
   )

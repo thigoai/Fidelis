@@ -17,6 +17,17 @@ type Config struct {
 	DBMinConns        int32
 	DBMaxConnLifetime time.Duration
 	DBMaxConnIdleTime time.Duration
+
+	// Email (SMTP). Se SMTPHost vazio, usamos console sender (loga email no stdout).
+	SMTPHost string
+	SMTPPort string
+	SMTPUser string
+	SMTPPass string
+	SMTPFrom string
+
+	// URLs publicas dos frontends — usadas em links de email (reset de senha).
+	AppURLLoja    string
+	AppURLCliente string
 }
 
 func Load() (*Config, error) {
@@ -29,6 +40,15 @@ func Load() (*Config, error) {
 		DBMinConns:        int32(getEnvInt("DB_MIN_CONNS", 5)),
 		DBMaxConnLifetime: getEnvDuration("DB_MAX_CONN_LIFETIME", time.Hour),
 		DBMaxConnIdleTime: getEnvDuration("DB_MAX_CONN_IDLE_TIME", 30*time.Minute),
+
+		SMTPHost: os.Getenv("SMTP_HOST"),
+		SMTPPort: getEnv("SMTP_PORT", "587"),
+		SMTPUser: os.Getenv("SMTP_USER"),
+		SMTPPass: os.Getenv("SMTP_PASS"),
+		SMTPFrom: getEnv("SMTP_FROM", "Fidelis <no-reply@fidelis.dev>"),
+
+		AppURLLoja:    getEnv("APP_URL_LOJA", "http://localhost:5173"),
+		AppURLCliente: getEnv("APP_URL_CLIENTE", "http://localhost:5174"),
 	}
 
 	var missing []string

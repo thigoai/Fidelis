@@ -60,6 +60,10 @@ func renderServiceError(c *gin.Context, err error) {
 	case errors.Is(err, service.ErrPasswordIncorrect):
 		jsonError(c, http.StatusUnauthorized, "password_incorrect", "Senha atual incorreta")
 
+	// Recuperacao de senha
+	case errors.Is(err, service.ErrInvalidToken):
+		jsonError(c, http.StatusBadRequest, "invalid_token", "Link de recuperacao invalido ou expirado")
+
 	default:
 		jsonError(c, http.StatusInternalServerError, "internal_error", "Erro interno")
 	}
