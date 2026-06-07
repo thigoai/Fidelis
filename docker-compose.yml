@@ -33,6 +33,13 @@ services:
       JWT_SECRET: ${JWT_SECRET:-troque-isto-em-producao}
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
       GIN_MODE: debug
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-Fidelis <no-reply@fidelis.dev>}
+      APP_URL_LOJA: ${APP_URL_LOJA:-http://localhost:5173}
+      APP_URL_CLIENTE: ${APP_URL_CLIENTE:-http://localhost:5174}
     ports:
       - "${BACKEND_PORT:-8080}:8080"
     volumes:

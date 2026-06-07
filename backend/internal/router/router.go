@@ -18,14 +18,16 @@ type Deps struct {
 	Pool *pgxpool.Pool
 	JWT  *jwtauth.Manager
 
-	Auth         *handler.AuthHandler
-	Users        *handler.UsersHandler
-	Stores       *handler.StoresHandler
-	Points       *handler.PointsHandler
-	Balance      *handler.BalanceHandler
-	Rewards      *handler.RewardsHandler
-	Redemptions  *handler.RedemptionHandler
-	Transactions *handler.TransactionsHandler
+	Auth          *handler.AuthHandler
+	Users         *handler.UsersHandler
+	Stores        *handler.StoresHandler
+	Points        *handler.PointsHandler
+	Balance       *handler.BalanceHandler
+	Rewards       *handler.RewardsHandler
+	Redemptions   *handler.RedemptionHandler
+	Transactions  *handler.TransactionsHandler
+	Stats         *handler.StatsHandler
+	PasswordReset *handler.PasswordResetHandler
 }
 
 func New(deps Deps) *gin.Engine {
@@ -40,12 +42,13 @@ func New(deps Deps) *gin.Engine {
 		auth.POST("/login", deps.Auth.Login)
 		auth.POST("/register/lojista", deps.Auth.RegisterLojista)
 		auth.POST("/register/cliente", deps.Auth.RegisterCliente)
+		auth.POST("/password-reset/request", deps.PasswordReset.Request)
+		auth.POST("/password-reset/confirm", deps.PasswordReset.Confirm)
 	}
 
 	// ===== API autenticada =====
 	api := r.Group("/api", middleware.Auth(deps.JWT))
 	{
-		// "Eu"
 		api.GET("/me", deps.Users.GetMe)
 		api.PATCH("/me", deps.Users.UpdateMe)
 		api.POST("/me/password", deps.Users.ChangePassword)
@@ -73,7 +76,7 @@ func New(deps Deps) *gin.Engine {
 			deps.Rewards.Delete,
 		)
 
-		// ===== Clientes e extrato da loja =====
+		// ===== Clientes, extrato e analytics da loja =====
 		api.GET("/stores/:id/members",
 			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
 			deps.Stores.ListMembers,
@@ -81,6 +84,10 @@ func New(deps Deps) *gin.Engine {
 		api.GET("/stores/:id/transactions",
 			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
 			deps.Transactions.ListByStore,
+		)
+		api.GET("/stores/:id/stats",
+			middleware.RequireRole(model.RoleLojista, model.RoleAdmin),
+			deps.Stats.Get,
 		)
 
 		// ===== Pontuar e resgatar =====

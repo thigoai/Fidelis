@@ -27,6 +27,3 @@ backend/fidelis-api
 
 # Docker
 *.pid
-
-# Estado local do Claude Code (memórias, settings)
-.claude/

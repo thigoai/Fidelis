@@ -4,7 +4,9 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router'
 import { ApiError } from '@/api/client'
 import { useAuth } from '@/auth/AuthContext'
 
-type LocationState = { from?: { pathname?: string } } | null
+type LocationState =
+  | { from?: { pathname?: string }; passwordReset?: boolean }
+  | null
 
 export default function LoginPage() {
   const { user, status, login } = useAuth()
@@ -16,11 +18,13 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
 
-  // Ja logado? redireciona pro destino original ou /dashboard
   if (status === 'authenticated' && user) {
     const from = (location.state as LocationState)?.from?.pathname ?? '/dashboard'
     return <Navigate to={from} replace />
   }
+
+  // Flash exibido apos reset de senha bem sucedido (location state vem do ResetSenha).
+  const passwordReset = (location.state as LocationState)?.passwordReset === true
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -30,11 +34,7 @@ export default function LoginPage() {
       await login(email, password)
       navigate('/dashboard', { replace: true })
     } catch (err) {
-      if (err instanceof ApiError) {
-        setError(err.message)
-      } else {
-        setError('Erro inesperado. Tente novamente.')
-      }
+      setError(err instanceof ApiError ? err.message : 'Erro inesperado.')
     } finally {
       setSubmitting(false)
     }
@@ -54,6 +54,12 @@ export default function LoginPage() {
             Entrar no painel
           </h1>
         </header>
+
+        {passwordReset && (
+          <div className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+            Senha atualizada. Entre com a nova.
+          </div>
+        )}
 
         <div className="space-y-3">
           <Field
@@ -86,12 +92,20 @@ export default function LoginPage() {
           {submitting ? 'Entrando…' : 'Entrar'}
         </button>
 
-        <p className="text-center text-sm text-surface-500 dark:text-surface-400">
-          Ainda não tem uma loja?{' '}
-          <Link to="/register" className="font-medium text-brand-600 hover:underline dark:text-brand-400">
-            Cadastre-se
+        <div className="flex flex-col gap-1 text-center text-sm text-surface-500 dark:text-surface-400">
+          <Link
+            to="/esqueci-senha"
+            className="font-medium text-brand-600 hover:underline dark:text-brand-400"
+          >
+            Esqueci minha senha
           </Link>
-        </p>
+          <span>
+            Ainda não tem uma loja?{' '}
+            <Link to="/register" className="font-medium text-brand-600 hover:underline dark:text-brand-400">
+              Cadastre-se
+            </Link>
+          </span>
+        </div>
       </form>
     </div>
   )

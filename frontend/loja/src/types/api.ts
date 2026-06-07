@@ -89,7 +89,6 @@ export type StoreMemberRow = {
 
 export type StoreMembersResponse = { members: StoreMemberRow[] }
 
-/** Linha do extrato visto pelo lojista. */
 export type StoreTransactionRow = {
   id: string
   customer_id: string
@@ -107,6 +106,41 @@ export type StoreTransactionRow = {
 }
 
 export type StoreTransactionsResponse = { transactions: StoreTransactionRow[] }
+
+// ===== Stats / Analytics =====
+
+export type StoreKPIs = {
+  total_customers: number
+  total_points_credited: number
+  total_points_redeemed: number
+  active_rewards: number
+}
+
+export type DailyPoints = {
+  date: string // ISO date
+  credited: number
+  redeemed: number
+}
+
+export type TopCustomer = {
+  customer_id: string
+  name: string
+  points_balance: number
+}
+
+export type TopReward = {
+  reward_id: string
+  name: string
+  points_cost: number
+  redemption_count: number
+}
+
+export type StoreStats = {
+  kpis: StoreKPIs
+  points_per_day: DailyPoints[]
+  top_customers: TopCustomer[]
+  top_rewards: TopReward[]
+}
 
 export type AuthResponse = {
   token: string
